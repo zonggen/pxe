@@ -1,6 +1,12 @@
 VM_NAME = pxe
 
-.PHONY: start stop
+.PHONY: console install start stop undefine
+
+download:
+	@./download
+
+clean:
+	@./download --clean
 
 console:
 	@sudo virsh console ${VM_NAME}

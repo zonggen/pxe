@@ -3,5 +3,5 @@ TIMEOUT 20
 PROMPT 0
 LABEL pxeboot
     KERNEL iso/rhcos-42.80.20191010.0-installer-kernel
-    APPEND ip=dhcp rd.neednet=1 initrd=iso/rhcos-42.80.20191010.0-installer-initramfs.img console=tty0 console=ttyS0 coreos.inst=yes coreos.inst.install_dev=sda coreos.inst.image_url=http://192.168.122.1:8000/metal/metal.raw.gz coreos.inst.ignition_url=http://192.168.122.1:8000/ign/base2.ign
+    APPEND ip=dhcp rd.neednet=1 initrd=iso/rhcos-42.80.20191010.0-installer-initramfs.img console=tty0 console=ttyS0 coreos.inst=yes coreos.inst.install_dev=sda coreos.inst.image_url=http://192.168.122.1:8000/metal/rhcos-42.80.20191010.0-metal-bios.raw.gz coreos.inst.ignition_url=http://192.168.122.1:8000/ign/base2.ign
 IPAPPEND 2

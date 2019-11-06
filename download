@@ -1,5 +1,5 @@
 #!/bin/bash
-set -xeuo pipefail
+set -xeo pipefail
 
 # installation script for rhcos-4.2
 if [[ $1 == "--clean" ]]
@@ -19,6 +19,6 @@ else
     https://releases-rhcos-art.cloud.privileged.psi.redhat.com/storage/releases/rhcos-4.2/42.80.20191010.0/rhcos-42.80.20191010.0-installer.iso
 
     # download bare metal BIOS image
-    curl -L -o metal/mv rhcos-42.80.20191010.0-metal-bios.raw.gz \
+    curl -L -o metal/rhcos-42.80.20191010.0-metal-bios.raw.gz \
     https://releases-rhcos-art.cloud.privileged.psi.redhat.com/storage/releases/rhcos-4.2/42.80.20191010.0/rhcos-42.80.20191010.0-metal-bios.raw.gz
 fi
