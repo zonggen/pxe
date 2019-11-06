@@ -1,0 +1,24 @@
+#!/bin/bash
+set -xeuo pipefail
+
+# installation script for rhcos-4.2
+if [[ $1 == "--clean" ]]
+then
+    rm -f iso/rhcos-* metal/rhcos-*
+else
+    # download initrd
+    curl -J -L -o iso/rhcos-42.80.20191010.0-installer-initramfs.img \
+    https://releases-rhcos-art.cloud.privileged.psi.redhat.com/storage/releases/rhcos-4.2/42.80.20191010.0/rhcos-42.80.20191010.0-installer-initramfs.img
+
+    # download kernel
+    curl -J -L -o iso/rhcos-42.80.20191010.0-installer-kernel \
+    https://releases-rhcos-art.cloud.privileged.psi.redhat.com/storage/releases/rhcos-4.2/42.80.20191010.0/rhcos-42.80.20191010.0-installer-kernel
+
+    # download rhcos installer iso
+    curl -J -L -o iso/rhcos-42.80.20191010.0-installer.iso \
+    https://releases-rhcos-art.cloud.privileged.psi.redhat.com/storage/releases/rhcos-4.2/42.80.20191010.0/rhcos-42.80.20191010.0-installer.iso
+
+    # download bare metal BIOS image
+    curl -L -o metal/mv rhcos-42.80.20191010.0-metal-bios.raw.gz \
+    https://releases-rhcos-art.cloud.privileged.psi.redhat.com/storage/releases/rhcos-4.2/42.80.20191010.0/rhcos-42.80.20191010.0-metal-bios.raw.gz
+fi
